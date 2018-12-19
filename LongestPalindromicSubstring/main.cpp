@@ -34,7 +34,7 @@ public:
             int len2 = expandAroundCenter(s, i, i+1);
             int len = max(len1, len2);
             cout << "len = " << len << endl;
-            if (len > end-start+1) {// 是否加1：不加返回asa,加1返回sds
+            if (len > end-start+1) {// 是否有等号
                 start = i-(len-1)/2;
                 end = i+len/2;
                 cout << "start = " << start<< ", end = " << end << ", str = " << string(s,start,end-start+1) << endl;

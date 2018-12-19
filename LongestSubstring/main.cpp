@@ -39,7 +39,7 @@ public:
         int n = int(s.length());
         int res = 0;
         
-        string resStr(s,0,1);
+//        string resStr(s,0,1);
         
         map<char,int> mapping;
         
@@ -47,18 +47,18 @@ public:
             if (mapping.find(s[j]) != mapping.end()) {
                 i = max(mapping[s[j]], i);
             }
-//            res = max(res, j-i+1);
-            cout << "i = " << i << ", j = " << j << ", str = " << string(s,i,j-i+1) << endl;
-
-            if (res < j-i+1) {
-                res = j-i+1;
-                resStr = string(s,i,j-i+1);
-            }
+            res = max(res, j-i+1);
+//            cout << "i = " << i << ", j = " << j << ", str = " << string(s,i,j-i+1) << endl;
+//
+//            if (res < j-i+1) {
+//                res = j-i+1;
+//                resStr = string(s,i,j-i+1);
+//            }
             
             mapping[s[j]] = j+1;
         }
         
-        cout << resStr << endl;//打印最大子串
+//        cout << resStr << endl;//打印最大子串
         
         return res;
     }

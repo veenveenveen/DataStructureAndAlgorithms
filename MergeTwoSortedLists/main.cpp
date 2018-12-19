@@ -56,6 +56,25 @@ public:
         
         return resList->next;
     }
+    
+    // 单链表反转
+    ListNode *reverse(ListNode *head) {
+        if (!head) {
+            return NULL;
+        }
+        ListNode *pCurrent, *pPre, *pNext;
+        pPre = head;
+        pCurrent = pPre->next;
+        while (pCurrent) {
+            pNext = pCurrent->next;
+            pCurrent->next = pPre;
+            pPre = pCurrent;
+            pCurrent = pNext;
+        }
+        head->next = NULL;
+        head = pPre;
+        return head;
+    }
 };
 
 int main(int argc, const char * argv[]) {

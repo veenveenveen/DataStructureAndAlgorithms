@@ -33,7 +33,7 @@ using namespace std;
 class Solution {
 public:
     
-    // O((n-m)*m)
+    // O((n-m)*m) O(n^2)
     bool isContained(string str, string cmp) {
         
         int n = int(str.length());
